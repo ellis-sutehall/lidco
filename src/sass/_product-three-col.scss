@@ -1,0 +1,35 @@
+$dark-grey: #48484a;
+
+.product-three-column {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    > h2 {
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+    a {
+        &:hover {
+            .product-link-title {
+                background-color: $dark-grey;
+            }
+            h2 {
+                color: white;
+            }
+        }
+    }
+    .img-wrap {
+        background-color: white;
+    }
+
+    .product-link-title {
+        border: 2px solid $dark-grey;
+        text-align: center;
+        padding-top: 5px;
+        background-color: white;
+        h2 {
+            color: $dark-grey;
+        }
+    }
+}

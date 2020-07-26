@@ -1,0 +1,76 @@
+$dark-grey: #48484a;
+$light-grey: rgba(72, 72, 74, 0.1);
+$arrow-grey: rgba(72, 72, 74, 0.3);
+
+.product-carousel {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: 768px) {
+        max-width: calc(100% / 2);
+    }
+    .slide {
+        text-align: center;
+        img {
+            margin: 0 auto;
+            margin-bottom: 2em;
+        }
+        .caption {
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .slick-arrow {
+        width: 30px;
+        height: 30px;
+        background-color: $arrow-grey;
+        border-radius: 50%;
+        top: 40%;
+        &:hover {
+            background-color: lighten($color: $arrow-grey, $amount: 10%);
+        }
+        &::before {
+            font-family: 'FontAwesome';
+            font-weight: 400;
+            color: white;
+            position: absolute;
+        }
+        &.slick-next {
+            &::before {
+                content: '\f054';
+                top: 6px;
+                left: 9px;
+            }
+        }
+        &.slick-prev {
+            &::before {
+                content: '\f053';
+                left: 6px;
+                top: 6px;
+            }
+        }
+    }
+    .slick-dots {
+        li,
+        button {
+            width: 15px;
+            height: 15px;
+        }
+        li {
+            background-color: $light-grey;
+            border-radius: 50%;
+            &.slick-active {
+                background-color: $dark-grey;
+            }
+            button {
+                &::before {
+                    content: '';
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

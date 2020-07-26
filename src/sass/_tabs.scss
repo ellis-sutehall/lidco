@@ -1,0 +1,70 @@
+$dark-grey: #48484a;
+$light-grey: rgba(72, 72, 74, 0.1);
+
+.product-tabs {
+    display: flex;
+    flex-wrap: wrap; // make sure it wraps
+
+    label {
+        order: 1; // Put the labels first
+        display: block;
+        padding: 0.5em;
+        margin: 0;
+        cursor: pointer;
+        background: white;
+        font-weight: bold;
+        font-size: 1.5em;
+        text-align: center;
+        border: 2px solid $dark-grey;
+        transition: background ease 0.2s;
+        width: calc(25% - 5px);
+        margin-left: 5px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        &:first-of-type {
+            margin-left: 0;
+            width: 25%;
+        }
+        &:hover {
+            background-color: $dark-grey;
+            color: white;
+        }
+    }
+
+    .tab {
+        order: 99; // Put the tabs last
+        flex-grow: 1;
+        width: 100%;
+        display: none;
+        padding: 1rem;
+        background: $light-grey;
+    }
+
+    input[type='radio'] {
+        display: none;
+    }
+
+    input[type='radio']:checked + label {
+        background: $dark-grey;
+        color: white;
+    }
+
+    input[type='radio']:checked + label + .tab {
+        display: block;
+    }
+}
+
+@media (max-width: 45em) {
+    .product-tabs .tab,
+    .product-tabs label {
+        order: initial;
+    }
+    .product-tabs label {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0.2rem;
+        &:first-of-type {
+            width: 100%;
+        }
+    }
+}

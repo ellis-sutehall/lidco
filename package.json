@@ -1,0 +1,15 @@
+{
+    "name": "lidco",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "watch": "node-sass -rw src/sass/ -o ./dist/styles/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "node-sass": "^4.14.1"
+    }
+}

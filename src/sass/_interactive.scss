@@ -1,0 +1,234 @@
+$orange: #ff6600;
+$light-grey: rgba(72, 72, 74, 0.1);
+
+.show-for-mobile {
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.show-for-desktop {
+    display: none;
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+}
+
+.product-interactive {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 5em;
+    .non-invasive,
+    .min-invasive {
+        .img-wrapper {
+            position: relative;
+            width: 730px;
+            height: auto;
+            margin: 0 auto;
+            @media screen and (max-width: 768px) {
+                width: auto;
+            }
+            .show-for-mobile {
+                margin-bottom: 2em;
+            }
+        }
+        .caption {
+            width: 275px;
+            position: absolute;
+            border: 1px solid $light-grey;
+            border-right: 8px solid $orange;
+            z-index: 100;
+            visibility: hidden;
+            transition: all 0.5 ease;
+            .caption-wrapper {
+                .caption-body {
+                    padding: 0.5em 1em;
+                    text-align: left;
+                    position: relative;
+                    background-color: white;
+                    z-index: 75;
+                    h2 {
+                        color: $orange;
+                        font-size: 1.5em;
+                    }
+                    p {
+                        font-weight: bold;
+                    }
+                }
+                .caption-arrow {
+                    width: 20px;
+                    height: 20px;
+                    background-color: $orange;
+                    position: absolute;
+                    right: -15px;
+                    transform: rotate(45deg);
+                    top: calc(50% - 10px);
+                    z-index: 50;
+                }
+
+                .caption-trigger {
+                    width: 25px;
+                    height: 25px;
+                    background-color: $orange;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: -50px;
+                    top: calc(50% - 12.5px);
+                    visibility: visible;
+                    cursor: pointer;
+                    .fa {
+                        color: white;
+                        top: 3px;
+                        left: 5px;
+                        position: absolute;
+                    }
+                    &::before {
+                        content: '';
+                        background-image: url('../../images/plus.svg');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        width: 12px;
+                        height: 11px;
+                    }
+                }
+            }
+        }
+        .mobile-captions {
+            display: none;
+            @media screen and (max-width: 768px) {
+                display: block;
+            }
+            .caption[class*='cap'] {
+                position: relative;
+                top: initial;
+                left: initial;
+                bottom: initial;
+                right: initial;
+                visibility: visible;
+                margin-left: 20px;
+                margin-bottom: 20px;
+                .caption-trigger {
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    right: -65px;
+                    top: calc(50% - 20px);
+                    &::before {
+                        display: none;
+                    }
+                    .integer {
+                        width: 40px;
+                        height: 40px;
+                        color: white;
+                        font-weight: bold;
+                        position: absolute;
+                        top: 5px;
+                        left: -2px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .non-invasive {
+        .caption {
+            &.cap-1 {
+                top: 34px;
+                left: -280px;
+            }
+            &.cap-2 {
+                top: 80px;
+                left: -280px;
+            }
+            &.cap-3 {
+                top: 45px;
+                left: 113px;
+            }
+            &.cap-4 {
+                bottom: 10px;
+                left: 160px;
+            }
+            &.cap-5 {
+                top: 34px;
+                left: 172px;
+            }
+            &.cap-6 {
+                top: -26px;
+                left: 204px;
+            }
+            &.cap-7 {
+                bottom: 58px;
+                left: 216px;
+            }
+            &.cap-8 {
+                top: -26px;
+                right: 160px;
+            }
+            &.cap-9 {
+                top: -26px;
+                right: 115px;
+            }
+            &.cap-10 {
+                top: 33px;
+                right: 58px;
+            }
+            &.cap-11 {
+                top: 139px;
+                right: 77px;
+            }
+        }
+    }
+    .min-invasive {
+        .caption {
+            &.cap-1 {
+                top: 81px;
+                left: -266px;
+            }
+            &.cap-2 {
+                bottom: -41px;
+                left: 17px;
+            }
+            &.cap-3 {
+                top: 47px;
+                left: 92px;
+            }
+            &.cap-4 {
+                top: 152px;
+                left: 140px;
+            }
+            &.cap-5 {
+                top: 34px;
+                left: 152px;
+            }
+            &.cap-6 {
+                top: -26px;
+                left: 184px;
+            }
+            &.cap-7 {
+                top: 102px;
+                left: 195px;
+            }
+            &.cap-8 {
+                top: -26px;
+                right: 182px;
+            }
+            &.cap-9 {
+                top: -26px;
+                right: 135px;
+            }
+            &.cap-10 {
+                top: 34px;
+                right: 80px;
+            }
+            &.cap-11 {
+                top: 138px;
+                right: 98px;
+            }
+        }
+    }
+}
